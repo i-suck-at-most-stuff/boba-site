@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh's Music Collection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fira+Sans&family=Indie+Flower&family=Pacifico&family=Press+Start+2P&family=Roboto+Mono&family=Comic+Neue&family=Lobster&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+        }
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            transition: font-family 0.5s ease-in-out;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        hr {
+            border: 2px solid black;
+            width: 80%;
+            margin: 20px auto;
+        }
+        .file-section {
+            margin: 20px auto;
+            width: 80%;
+            text-align: left;
+        }
+        .file-section h2 {
+            background: black;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .file-list li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .file-list li a:hover {
+            color: red;
+        }
+        .file-description {
+            font-size: 0.9em;
+            color: #777;
+        }
+        .song-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .song-cover {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .song-details {
+            display: flex;
+            flex-direction: column;
+        }
+        footer {
+            margin: 40px 0;
+            font-size: 1em;
+            color: gray;
+        }
+    </style>
+    <!--i know it said static html/css but i wanted to do something for the title in js, hopefully this is fine :3-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fonts = ["Courier Prime", "Fira Sans", "Indie Flower", "Pacifico", "Press Start 2P", "Roboto Mono", "Comic Neue", "Lobster", "Arial", "Times New Roman"];
+            const title = document.getElementById("random-font");
+            function changeFont() {
+                title.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
+            }
+            changeFont();
+            setInterval(changeFont, 1050);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <br>
+        <div class="title-container">
+            <h1 id="random-font">Josh's Music Collection</h1>
+        </div>
+        <p>collection of some of the songs on josh's playlist &middot; made for hackclub's boba workshop</p>
+    </header>
+    <hr>
+    <section class="file-section">
+        <h2>Available Songs</h2>
+        <ul class="file-list">
+            <li class="song-item">
+                <img src="/covers/best-of-me-cover-art.webp" class="song-cover">
+                <div class="song-details">
+                    <a href="/songs/best-of-me.mp3">'The Best Of Me' by the starting line</a>
+                    <p class="file-description">pop punk song, cant wait to see them live at warped this november</p>
+                </div>
+            </li>
+
+            <li class="song-item">
+                <img src="/covers/chelsea-smile-cover-art.jpg" class="song-cover">
+                <div class="song-details">
+                    <a href="/songs/chelsea-smile.mp3">'Chelsea Smile' by bring me the horizon</a>
+                    <p class="file-description">metalcore/screamocore song, sadly they don't play this one live anymore</p>
+                </div>
+            </li>
+
+            <li class="song-item">
+                <img src="/covers/since-u-been-gone-cover-art.jpg" class="song-cover">
+                <div class="song-details">
+                    <a href="/songs/since-u-been-gone-adtr.mp3">'Since U Been Gone' by a day to remember</a>
+                    <p class="file-description">one of the best pop punk/emo covers of a pop song</p>
+                </div>
+            </li>
+        
+            <li class="song-item">
+                <img src="/covers/dancing-through-sunday-cover-art.jpg" class="song-cover">
+                <div class="song-details">
+                    <a href="/songs/dancing-through-sunday.mp3">'Dancing Through Sunday' by afi</a>
+                    <p class="file-description">they better play warped this november, gotta hear this song live</p>
+                </div>
+            </li>
+            
+            <li class="song-item">
+                <img src="/covers/king-for-a-day-cover-art.jfif" class="song-cover">
+                <div class="song-details">
+                    <a href="/songs/king-for-a-day.mp3">'King For A Day' by pierce the veil &amp; kellin quinn &lt;3</a>
+                    <p class="file-description">fire song, i love kellin quinn so much</p>
+                </div>
+            </li>
+        </ul>
+    </ul>
+    </section>
+    <hr>
+    <footer>
+        <p>made by <a href="https://github.com/i-suck-at-most-stuff" style="color: inherit;">josh</a></p>
+    </footer>
+</body>
+</html>
+
+    
